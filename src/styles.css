@@ -12,17 +12,14 @@
 
 #alert {
   display: none;
-}
-
-#doctorList {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-}
-
-.doctor {
-  background-color: white;
-  margin: 10px;
-  padding: 30px;
+  width: 300px;
+  position: fixed;
+  top: 5%;
+  left: 40%;
+  background-color: rgba(255, 0, 0, 0.8);
+  text-align: center;
+  border-radius: 5px;
+  padding: 10px;
 }
 
 .container p {
@@ -32,4 +29,41 @@
 
 .label {
   font-weight: bold;
+}
+
+.doctor {
+  background-color: white;
+  margin: 10px;
+  padding: 30px;
+}
+
+.doctor:hover {
+  background-color: black;
+  margin: 10px;
+  padding: 30px;
+}
+
+.doctorBio {
+  display: grid;
+  grid-template-columns: 1fr 8fr;
+}
+
+.doctorDetails {
+  display: none;
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+.practices {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.practice {
+  margin: 10px;
+}
+
+img {
+  margin-right: 40px;
 }
