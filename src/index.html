@@ -1,11 +1,34 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Practice</title>
+    <title>Find a Doctor</title>
   </head>
   <body>
     <div class="container">
-      <div id="output"></div>
+      <h1>Find a Doctor</h1>
+      <h2>Search by doctor</h2>
+      <form id="name">
+        <div class="form-group">
+          <input type="text" class="form-control" name="firstName" id="firstName" value="First Name">
+          <input type="text" class="form-control" name="lastName" id="lastName" value="Last Name">
+          <button type="submit" class="btn btn-primary">Search</button>
+        </div>
+      </form>
+
+      <h2>Search by issue</h2>
+      <form id="name">
+        <div class="form-group">
+          <input type="text" class="form-control" name="firstName" id="firstName" value="First Name">
+          <input type="text" class="form-control" name="lastName" id="lastName" value="Last Name">
+          <select id="specialty">
+
+          </select>
+          <button type="submit" class="btn btn-primary">Search</button>
+        </div>
+      </form>
+
+      <h2 id="resultsHeading">Results</h2>
+      <div id="results"></div>
     </div>
   </body>
 </html>
