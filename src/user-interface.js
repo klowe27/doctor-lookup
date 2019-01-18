@@ -11,11 +11,20 @@ export function buildDoctorList(results) {
   (results.data.length > 0) ? $('#resultsSummary').text(`We found ${results.data.length} doctor(s) in Portland, OR`) : $('#resultsSummary').text(`0 results found. Try again with broader search criteria`);
 
   let doctorList = "";
-  results.data.forEach(function(doctor){
-    doctorList += `<div class="doctor">`;
+  results.data.forEach(function(doctor, index){
+    doctorList += `<div value="${index}" class="doctor">`;
     doctorList += `<img src="${doctor.profile.image_url}">`;
     doctorList += `<h3>Dr. ${doctor.profile.first_name} ${doctor.profile.last_name}</h3>`;
-    doctorList += `<h4>Practices</h4>`;
+    doctorList += `<p>${doctor.profile.bio}</p>`;
+
+    doctorList += `<div id="show${index}" class="doctorDetails">`;
+    doctorList += `<div><h4>Specialties</h4><ul>`;
+    doctor.specialties.forEach(function(specialty){
+      doctorList += `<li>${specialty.name}</li>`;
+    });
+    doctorList += `</ul></div>`;
+
+    doctorList += `<div><h4>Practices</h4>`;
     doctor.practices.forEach(function(practice){
       doctorList += `<h6>${practice.name}</h6>`;
       doctorList += `<p><span class="label">Accepting new patients:</span> `;
@@ -28,11 +37,8 @@ export function buildDoctorList(results) {
       (practice.visit_address.street2 === undefined) ? null : doctorList += `${practice.visit_address.street2}, `;
       doctorList += `${practice.visit_address.city}, ${practice.visit_address.state} ${practice.visit_address.zip}</p>`;
     });
-    doctorList += `<h4>Specialties</h4><ul>`;
-    doctor.specialties.forEach(function(specialty){
-      doctorList += `<li>${specialty.name}</li>`;
-    })
-    doctorList += `</ul></div>`
+
+    doctorList += `</div></div></div>`
   });
   $('#doctorList').append(doctorList);
 }
