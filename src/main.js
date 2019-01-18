@@ -19,6 +19,7 @@ $(document).ready(function() {
   $('#search').submit(function(event){
     event.preventDefault();
     $('#alert').hide();
+    $('#results').hide();
     let query = "";
     const issue = $("input#issue").val();
     $('#issue').val("");
@@ -26,19 +27,21 @@ $(document).ready(function() {
     $('#name').val("");
     const specialty = $('#specialty option:selected').val();
 
-    (!name && !issue && !specialty) ? $('#alert').show() : null;
-    (name) ? query += `name=${name}&` : null;
-    (issue) ? query += `query=${issue}&` : null;
-    (specialty) ? query += `query=${specialty}&` : null;
+    if (!name && !issue && !specialty) {
+      $('#alert').show();
+    }  else {
+      (name) ? query += `name=${name}&` : null;
+      (issue) ? query += `query=${issue}&` : null;
+      (specialty) ? query += `query=${specialty}&` : null;
 
-    const promiseDoctors = doctorSearch.getDoctors(query);
+      const promiseDoctors = doctorSearch.getDoctors(query);
 
-    promiseDoctors.then(function(response) {
-      let results = JSON.parse(response);
-      buildDoctorList(results);
-    }, function(error) {
-      $('.showErrors').text(`There was an error processing your request: ${error.message}`);
-    });
-
+      promiseDoctors.then(function(response) {
+        let results = JSON.parse(response);
+        buildDoctorList(results);
+      }, function(error) {
+        $('.showErrors').text(`There was an error processing your request: ${error.message}`);
+      });
+    }
   });
 });
