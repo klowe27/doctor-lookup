@@ -6,27 +6,26 @@
   <body>
     <div class="container">
       <h1>Find a Doctor</h1>
-      <h2>Search by doctor</h2>
-      <form id="name">
+      <div id="alert">Enter at least 1 search criteria</div>
+
+      <p>Enter at least one search criteria. Enter multiple criteria to refine your results.</p>
+      <form id="search">
         <div class="form-group">
-          <input type="text" class="form-control" name="firstName" id="firstName" value="First Name">
-          <input type="text" class="form-control" name="lastName" id="lastName" value="Last Name">
-          <button type="submit" class="btn btn-primary">Search</button>
+          <label for="issue">Issue (e.g. "sore throat", "toothache")</label>
+          <input type="text" class="form-control" name="issue" id="issue">
         </div>
+        <div class="form-group">
+          <label for="name">Doctor name (first, last or full name)</label>
+          <input type="text" class="form-control" name="name" id="name">
+        </div>
+        <label for="specialty">Specialty</label>
+        <select id="specialty">
+          <option></option>
+        </select>
+        <button type="submit" class="btn btn-primary">Search</button>
       </form>
 
-      <h2>Search by issue</h2>
-      <form id="name">
-        <div class="form-group">
-          <input type="text" class="form-control" name="firstName" id="firstName" value="First Name">
-          <input type="text" class="form-control" name="lastName" id="lastName" value="Last Name">
-          <select id="specialty">
-
-          </select>
-          <button type="submit" class="btn btn-primary">Search</button>
-        </div>
-      </form>
-
+      <div class="showErrors"></div>
       <h2 id="resultsHeading">Results</h2>
       <div id="results"></div>
     </div>
