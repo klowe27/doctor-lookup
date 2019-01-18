@@ -1,3 +1,25 @@
 .container {
   background-color: gray;
 }
+
+#resultsHeading {
+  display: none;
+}
+
+#results {
+  display: none;
+}
+
+#alert {
+  display: none;
+}
+
+#doctorList {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.doctor {
+  background-color: white;
+  margin: 10px;
+}
