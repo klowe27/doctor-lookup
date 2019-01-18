@@ -13,10 +13,12 @@ export function buildDoctorList(results) {
   let doctorList = "";
   results.data.forEach(function(doctor, index){
     doctorList += `<div value="${index}" class="doctor">`;
-    doctorList += `<img src="${doctor.profile.image_url}">`;
-    doctorList += `<h3>Dr. ${doctor.profile.first_name} ${doctor.profile.last_name}</h3>`;
+    doctorList += `<div class="doctorBio"><div>`;
+    doctorList += `<img src="${doctor.profile.image_url}"></div>`;
+    doctorList += `<div><h3>${doctor.profile.first_name} ${doctor.profile.last_name}, ${doctor.profile.title}</h3>`;
     doctorList += `<p>${doctor.profile.bio}</p>`;
 
+    doctorList += `</div></div>`;
     doctorList += `<div id="show${index}" class="doctorDetails">`;
     doctorList += `<div><h4>Specialties</h4><ul>`;
     doctor.specialties.forEach(function(specialty){
@@ -24,8 +26,9 @@ export function buildDoctorList(results) {
     });
     doctorList += `</ul></div>`;
 
-    doctorList += `<div><h4>Practices</h4>`;
+    doctorList += `<div><h4>Practices</h4><div class="practices">`;
     doctor.practices.forEach(function(practice){
+      doctorList += `<div class="practice">`;
       doctorList += `<h6>${practice.name}</h6>`;
       doctorList += `<p><span class="label">Accepting new patients:</span> `;
       (practice.accepts_new_patients) ?  doctorList += `Yes</p>` : doctorList += `No</p>`;
@@ -36,9 +39,9 @@ export function buildDoctorList(results) {
       doctorList += `<p><span class="label">Address:</span> ${practice.visit_address.street}, `;
       (practice.visit_address.street2 === undefined) ? null : doctorList += `${practice.visit_address.street2}, `;
       doctorList += `${practice.visit_address.city}, ${practice.visit_address.state} ${practice.visit_address.zip}</p>`;
+      doctorList += `</div>`;
     });
-
-    doctorList += `</div></div></div>`
+    doctorList += `</div></div></div></div>`
   });
   $('#doctorList').append(doctorList);
 }

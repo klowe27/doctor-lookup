@@ -16,9 +16,13 @@ $(document).ready(function() {
     $('.showErrors').text(`There was an error processing your request: ${error.message}`);
   });
 
+  $("#alert").click(function(){
+    $('#alert').hide("slow");
+  });
+
   $("#doctorList").on("click", "div", function(){
     const id = $(this).attr("value");
-    $('#show'+id).toggle();
+    $('#show'+id).toggle("slow");
   });
 
   $('#search').submit(function(event){
@@ -31,6 +35,7 @@ $(document).ready(function() {
     const name = $('input#name').val();
     $('#name').val("");
     const gender = $('#gender option:selected').val();
+    console.log(gender);
     const specialty = $('#specialty option:selected').val();
 
     if (!name && !issue && !specialty && !gender) {
