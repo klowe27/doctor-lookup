@@ -1,10 +1,19 @@
-import { Practice } from './practice.js';
+import { DoctorSearch } from './doctor-search.js';
+import { buildSpecialtyDropdown } from './user-interface.js'
 import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
 
 $(document).ready(function() {
-  var practice = new Practice('Kristin');
-  $('#output').append(`<p>${practice.name}</p>`);
+  const doctorSearch = new DoctorSearch();
+  const promiseSpecialties = doctorSearch.getSpecialties();
+
+  promiseSpecialties.then(function(response) {
+    let results = JSON.parse(response);
+    buildSpecialtyDropdown(results);
+  }, function(error) {
+    $('.showErrors').text(`There was an error processing your request: ${error.message}`);
+  });
+
 });
