@@ -16,6 +16,11 @@ $(document).ready(function() {
     $('.showErrors').text(`There was an error processing your request: ${error.message}`);
   });
 
+  $("#doctorList").on("click", "div", function(){
+    const id = $(this).attr("value");
+    $('#show'+id).toggle();
+  });
+
   $('#search').submit(function(event){
     event.preventDefault();
     $('#alert').hide();
@@ -25,17 +30,18 @@ $(document).ready(function() {
     $('#issue').val("");
     const name = $('input#name').val();
     $('#name').val("");
+    const gender = $('#gender option:selected').val();
     const specialty = $('#specialty option:selected').val();
 
-    if (!name && !issue && !specialty) {
+    if (!name && !issue && !specialty && !gender) {
       $('#alert').show();
     }  else {
       (name) ? query += `name=${name}&` : null;
       (issue) ? query += `query=${issue}&` : null;
+      (gender) ? query += `gender=${gender}&` : null;
       (specialty) ? query += `query=${specialty}&` : null;
 
       const promiseDoctors = doctorSearch.getDoctors(query);
-
       promiseDoctors.then(function(response) {
         let results = JSON.parse(response);
         buildDoctorList(results);
