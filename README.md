@@ -1,17 +1,20 @@
-# Title
+# Find a Doctor
 
-#### Description, date
+#### Doctor Search Site, 1.18.19
 
-#### By
+#### By Kristin Brewer-Lowe
 
 ## Description
 
-Description.
-
+This site allows users to search for doctors in the Portland, OR area based on various search criteria including medical issue, doctor name, or specialty. This site uses data from the BetterDoctor API.
 
 ## Setup/Installation Requirements
 
-* Instructions.
+* In the command line, clone this repository using command $ git clone https://github.com/klowe27/doctor-lookup
+* Navigate into the directory and use command $ npm install
+* In the root directory, create an .env file
+* Get an API key from https://developer.betterdoctor.com/ and add it to your .env fil as exports.apiKey: [your key]
+* To open the application in Chrome, use command $ npm run start
 
 ## Known Bugs
 
@@ -23,10 +26,10 @@ If you have any questions or issues, please contact kristin.lowe1@gmail.com. Or,
 
 ## Technologies Used
 
-Javascript, Node, npm, Jasmine, Karma, HTML, CSS, and Git.
+Javascript, BetterDoctor API, Bootstrap, jQuery, npm, HTML, CSS, and Git.
 
 ### License
 
 This software is licensed under the MIT license.
 
-Copyright (c) 2019 **Owners**
+Copyright (c) 2019 **Kristin Brewer-Lowe**
