@@ -7,8 +7,8 @@ export function buildSpecialtyDropdown(results) {
 }
 
 export function buildDoctorList(results) {
-  $('#results').show();
-  (results.data.length > 0) ? $('#resultsSummary').text(`We found ${results.data.length} doctor(s) in Portland, OR`) : $('#resultsSummary').text(`0 results found. Try again with broader search criteria.`);
+  $('#results').slideDown();
+  (results.data.length > 0) ? $('#resultsSummary').text(`We found ${results.data.length} doctor(s) in Portland, OR`) : $('#resultsSummary').text(`0 results found. Try again with broader search criteria`);
 
   let doctorList = "";
   results.data.forEach(function(doctor, index){

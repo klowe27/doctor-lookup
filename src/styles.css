@@ -94,7 +94,7 @@ button {
 }
 
 .doctor:hover {
-  background-color: #F0F0F0;
+  background-color:	#F5F5F5;
 }
 
 .doctorBio {
@@ -103,6 +103,9 @@ button {
 }
 
 .doctorDetails {
+  background-color: #E8E8E8;
+  padding: 20px;
+  padding-bottom: 40px;
   display: none;
   margin-top: 30px;
   display: grid;
@@ -154,7 +157,7 @@ img {
 
   h4 {
     margin-top: 30px;
-    margin-bottom: 0px;
+    margin-bottom: 10px;
   }
 
   .doctorBio {

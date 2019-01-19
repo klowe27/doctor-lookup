@@ -1,58 +1,50 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link href="https://fonts.googleapis.com/css?family=Barlow" rel="stylesheet">
-    <title>Find a Doctor</title>
-  </head>
-  <body>
-    <div class="container">
-      <h1>Find a Doctor in Portland, OR</h1>
-      <div id="alert">Enter at least 1 search criteria. Enter multiple to refine results.<span class="close">x</span></div>
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Barlow" rel="stylesheet">
+  <title>Find a Doctor</title>
+</head>
+<body>
+  <div class="container">
+    <h1>Find a Doctor in Portland, OR</h1>
+    <div id="alert">Enter at least 1 search criteria. Enter multiple to refine results.<span class="close">x</span></div>
 
-      <form id="search">
-        <div class="formRow1">
-
-          <div class="form-group form-group-left">
-            <label for="issue">Issue (e.g. "sore throat", "toothache")</label>
-            <input type="text" class="form-control" name="issue" id="issue">
-          </div>
-
-          <div class="form-group">
-            <label for="name">Doctor name (first, last or full name)</label>
-            <input type="text" class="form-control" name="name" id="name">
-          </div>
-
+    <form id="search">
+      <div class="formRow1">
+        <div class="form-group form-group-left">
+          <label for="issue">Issue (e.g. "sore throat", "toothache")</label>
+          <input type="text" class="form-control" name="issue" id="issue">
         </div>
-
-        <div class="formRow2">
-
-          <div class="form-group form-group-left">
-            <label for="name">Doctor gender</label>
-            <select id="gender" class="form-control">
-              <option></option>
-              <option value ="female">Female</option>
-              <option value ="male">Male</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="specialty">Specialty</label>
-            <select id="specialty" class="form-control">
-              <option></option>
-            </select>
-          </div>
-
+        <div class="form-group">
+          <label for="name">Doctor name (first, last or full name)</label>
+          <input type="text" class="form-control" name="name" id="name">
         </div>
-
-        <button type="submit" class="btn btn-info btn-block">Search</button>
-      </form>
-
-      <div class="showErrors"></div>
-      <div id="results">
-        <h2>Results</h2>
-        <p id="resultsSummary"></p>
-        <div id="doctorList"></div>
       </div>
+      <div class="formRow2">
+        <div class="form-group form-group-left">
+          <label for="name">Doctor gender</label>
+          <select id="gender" class="form-control">
+            <option></option>
+            <option value ="female">Female</option>
+            <option value ="male">Male</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="specialty">Specialty</label>
+          <select id="specialty" class="form-control">
+            <option></option>
+          </select>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-info btn-block">Search</button>
+    </form>
+
+    <div class="showErrors"></div>
+    <div id="results">
+      <h2>Results</h2>
+      <p id="resultsSummary"></p>
+      <div id="doctorList"></div>
     </div>
-  </body>
+  </div>
+</body>
 </html>

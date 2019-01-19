@@ -7,8 +7,8 @@ import './styles.css';
 
 $(document).ready(function() {
   const doctorSearch = new DoctorSearch();
-  const promiseSpecialties = doctorSearch.getSpecialties();
 
+  const promiseSpecialties = doctorSearch.getSpecialties();
   promiseSpecialties.then(function(response) {
     let results = JSON.parse(response);
     buildSpecialtyDropdown(results);
@@ -22,11 +22,12 @@ $(document).ready(function() {
 
   $("#doctorList").on("click", "div", function(){
     const id = $(this).attr("value");
-    $('#show'+id).toggle("slow");
+    $('#show'+id).toggle();
   });
 
   $('#search').submit(function(event){
     event.preventDefault();
+    $('.showErrors').hide();
     $('#alert').hide();
     $('#results').hide();
     let query = "";
@@ -35,7 +36,6 @@ $(document).ready(function() {
     const name = $('input#name').val();
     $('#name').val("");
     const gender = $('#gender option:selected').val();
-    console.log(gender);
     const specialty = $('#specialty option:selected').val();
 
     if (!name && !issue && !specialty && !gender) {
@@ -51,7 +51,7 @@ $(document).ready(function() {
         let results = JSON.parse(response);
         buildDoctorList(results);
       }, function(error) {
-        $('.showErrors').text(`There was an error processing your request: ${error.message}`);
+        $('.showErrors').text(`There was an error processing your request: ${error.message}.`);
       });
     }
   });
