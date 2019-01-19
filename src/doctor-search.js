@@ -11,7 +11,7 @@ class DoctorSearch {
         } else {
           reject(Error(request.statusText));
         }
-      }
+      };
       request.open("GET", url, true);
       request.send();
     });
@@ -27,11 +27,11 @@ class DoctorSearch {
         } else {
           reject(Error(request.statusText));
         }
-      }
+      };
       request.open("GET", url, true);
       request.send();
     });
   }
 }
 
-export { DoctorSearch }
+export { DoctorSearch };

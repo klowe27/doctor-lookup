@@ -41,7 +41,7 @@ export function buildDoctorList(results) {
       doctorList += `${practice.visit_address.city}, ${practice.visit_address.state} ${practice.visit_address.zip}</p>`;
       doctorList += `</div>`;
     });
-    doctorList += `</div></div></div></div>`
+    doctorList += `</div></div></div></div>`;
   });
   $('#doctorList').html(doctorList);
 }

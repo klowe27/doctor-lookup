@@ -1,5 +1,5 @@
 import { DoctorSearch } from './doctor-search.js';
-import { buildSpecialtyDropdown, buildDoctorList } from './user-interface.js'
+import { buildSpecialtyDropdown, buildDoctorList } from './user-interface.js';
 import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
