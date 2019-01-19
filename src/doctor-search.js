@@ -20,7 +20,7 @@ class DoctorSearch {
   getDoctors(query) {
     return new Promise(function(resolve, reject) {
       const request = new XMLHttpRequest();
-      const url = `https://api.betterdoctor.com/2016-03-01/doctors?${query}sort=last-name-asc&location=or-portland&skip=0&limit=10&user_key=${process.env.exports.apiKey}`;
+      const url = `https://api.betterdoctor.com/2016-03-01/doctors?${query}sort=last-name-asc&location=or-portland&skip=0&limit=100&user_key=${process.env.exports.apiKey}`;
       request.onload = function() {
         if (this.status === 200) {
           resolve(request.response);
