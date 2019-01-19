@@ -8,7 +8,7 @@ export function buildSpecialtyDropdown(results) {
 
 export function buildDoctorList(results) {
   $('#results').show();
-  (results.data.length > 0) ? $('#resultsSummary').text(`We found ${results.data.length} doctor(s) in Portland, OR`) : $('#resultsSummary').text(`0 results found. Try again with broader search criteria`);
+  (results.data.length > 0) ? $('#resultsSummary').text(`We found ${results.data.length} doctor(s) in Portland, OR`) : $('#resultsSummary').text(`0 results found. Try again with broader search criteria.`);
 
   let doctorList = "";
   results.data.forEach(function(doctor, index){
@@ -29,7 +29,7 @@ export function buildDoctorList(results) {
     doctorList += `<div><h4>Practices</h4><div class="practices">`;
     doctor.practices.forEach(function(practice){
       doctorList += `<div class="practice">`;
-      doctorList += `<h6>${practice.name}</h6>`;
+      doctorList += `<h5>${practice.name}</h5>`;
       doctorList += `<p><span class="label">Accepting new patients:</span> `;
       (practice.accepts_new_patients) ?  doctorList += `Yes</p>` : doctorList += `No</p>`;
       doctorList += `<p><span class="label">Website:</span> ${practice.website}</p>`;
@@ -43,5 +43,5 @@ export function buildDoctorList(results) {
     });
     doctorList += `</div></div></div></div>`
   });
-  $('#doctorList').append(doctorList);
+  $('#doctorList').html(doctorList);
 }

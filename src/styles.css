@@ -6,12 +6,25 @@ body {
 h1 {
   font-size: 60px;
   color: #17a2b8;
+  margin-bottom: 25px;
+}
+
+h2 {
+  margin-top: 30px;
+  font-size: 40px;
+  color: #17a2b8;
 }
 
 h3 {
   color: #ffa500;
 }
+
 h4 {
+  color: #17a2b8;
+}
+
+h5 {
+  margin-top: 20px;
   color: #ffa500;
 }
 
@@ -21,6 +34,11 @@ h4 {
 
 #results {
   display: none;
+}
+
+#resultsSummary {
+  color: white;
+  margin-bottom: 15px;
 }
 
 .formRow1 {
@@ -53,8 +71,9 @@ button {
   position: fixed;
   text-align: center;
   top: 3%;
-  left: 35%;
-  background-color: #ffa500;
+  left: 32%;
+  border: 1px solid #ffa500;
+  background-color: rgba(255,165,0, .9);
   border-radius: 5px;
   padding: 20px;
 }
@@ -70,12 +89,12 @@ button {
 
 .doctor {
   background-color: white;
-  margin: 15px;
+  margin-bottom: 25px;
   padding: 35px;
 }
 
 .doctor:hover {
-  background-color: #fafafa;
+  background-color: #F0F0F0;
 }
 
 .doctorBio {
@@ -96,9 +115,57 @@ button {
 }
 
 .practice {
-  margin: 10px;
+  margin-right: 15px;
 }
 
 img {
   margin-right: 40px;
+  margin-top: 5px;
+}
+
+.showErrors {
+  margin-top: 30px;
+  color: white;
+}
+
+@media screen and (max-width: 1000px) {
+  .formRow1 {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .formRow2 {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .form-group-left {
+    margin-right: 0px;
+  }
+
+  #alert {
+    left: auto;
+    width: 400px;
+  }
+
+  h1 {
+    font-size: 50px;
+  }
+
+  h4 {
+    margin-top: 30px;
+    margin-bottom: 0px;
+  }
+
+  .doctorBio {
+    grid-template-columns: 1fr;
+  }
+
+  .doctorDetails {
+    grid-template-columns: 1fr;
+  }
+
+  .practices {
+    grid-template-columns: 1fr;
+  }
 }
