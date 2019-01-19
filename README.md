@@ -13,7 +13,7 @@ This app allows users to search for doctors in the Portland, OR area based on va
 * In the command line, clone this repository using command $ git clone https://github.com/klowe27/doctor-lookup
 * Navigate into the directory and use command $ npm install
 * In the root directory, create an .env file
-* Get an API key from https://developer.betterdoctor.com/ and add it to your .env file as variable exports.apiKey: [your key]
+* Get an API key from https://developer.betterdoctor.com/ and add it to your .env file as variable exports.apiKey = [your key]
 * To open the application in Chrome, use command $ npm run start
 
 ## Known Bugs
