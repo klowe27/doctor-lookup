@@ -131,6 +131,10 @@ img {
   color: white;
 }
 
+.showMore {
+  display: none;
+}
+
 @media screen and (max-width: 1000px) {
   .formRow1 {
     display: grid;

@@ -19,7 +19,7 @@ export function buildDoctorList(results) {
     doctorList += `<p>${doctor.profile.bio}</p>`;
 
     doctorList += `</div></div>`;
-    doctorList += `<div id="show${index}" class="doctorDetails">`;
+    doctorList += `<div class="showMore" id="show${index}"><div class="doctorDetails">`;
     doctorList += `<div><h4>Specialties</h4><ul>`;
     doctor.specialties.forEach(function(specialty){
       doctorList += `<li>${specialty.name}</li>`;
@@ -41,7 +41,7 @@ export function buildDoctorList(results) {
       doctorList += `${practice.visit_address.city}, ${practice.visit_address.state} ${practice.visit_address.zip}</p>`;
       doctorList += `</div>`;
     });
-    doctorList += `</div></div></div></div>`;
+    doctorList += `</div></div></div></div></div>`;
   });
   $('#doctorList').html(doctorList);
 }
