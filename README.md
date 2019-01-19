@@ -1,19 +1,19 @@
 # Find a Doctor
 
-#### Doctor Search Site, 1.18.19
+#### App to Find a Doctor in Portland, 1.18.19
 
 #### By Kristin Brewer-Lowe
 
 ## Description
 
-This site allows users to search for doctors in the Portland, OR area based on various search criteria including medical issue, doctor name, or specialty. This site uses data from the BetterDoctor API.
+This app allows users to search for doctors in the Portland, OR area based on various search criteria, including medical issue, doctor name, doctor gender and specialty. This app uses data from the BetterDoctor API.
 
 ## Setup/Installation Requirements
 
 * In the command line, clone this repository using command $ git clone https://github.com/klowe27/doctor-lookup
 * Navigate into the directory and use command $ npm install
 * In the root directory, create an .env file
-* Get an API key from https://developer.betterdoctor.com/ and add it to your .env fil as exports.apiKey: [your key]
+* Get an API key from https://developer.betterdoctor.com/ and add it to your .env file as variable exports.apiKey: [your key]
 * To open the application in Chrome, use command $ npm run start
 
 ## Known Bugs
